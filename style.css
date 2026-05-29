@@ -89,7 +89,7 @@ body {
     max-width: 650px;
 }
 
-/* Düymə Klasları, LinkedIn Modifikasiyası və Effektləri */
+/* Düymə Klasları və Effektləri */
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -123,7 +123,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* --- 3. Skills Section Klasları (Ayrıca Bölmə) --- */
+/* --- 3. Skills Section Klasları --- */
 .skills-section {
     padding: 80px 8%;
     background-color: #ffffff;
@@ -279,7 +279,7 @@ body {
     background-color: #34495e;
 }
 
-/* --- 6. Nailiyyətlər Klasları (CSS Grid 4-lü Struktur) --- */
+/* --- 6. Nailiyyətlər Klasları (CSS Grid) --- */
 .achievements-section {
     padding: 80px 8%;
     background-color: #f1f2f6;
