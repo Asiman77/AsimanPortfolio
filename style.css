@@ -1,4 +1,4 @@
-/* --- Ümumi Reset və Dəyişənlər --- */
+/* --- Ümumi Sıfırlamalar və Dəyişənlər --- */
 * {
     margin: 0;
     padding: 0;
@@ -13,14 +13,14 @@ body {
     line-height: 1.6;
 }
 
-/* --- 1. Sticky Navbar (Sənəddəki CSS Tələbi) --- */
+/* --- 1. Sticky Navbar Klasları --- */
 .navbar {
     position: sticky;
     top: 0;
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     display: flex;
-    justify-content: space-between; /* Flexbox tətbiqi */
+    justify-content: space-between;
     align-items: center;
     padding: 18px 8%;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
@@ -50,7 +50,7 @@ body {
     color: #3498db;
 }
 
-/* --- 2. Hero Section --- */
+/* --- 2. Hero Section Klasları --- */
 .hero-section {
     padding: 120px 8% 80px 8%;
     background: radial-gradient(circle at 90% 10%, #e8f4fd 0%, #f8f9fa 60%);
@@ -89,7 +89,7 @@ body {
     max-width: 650px;
 }
 
-/* Düymələr (Hover və Transform) */
+/* Düymə Klasları və Effektləri */
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -112,11 +112,11 @@ body {
 }
 
 .btn:hover {
-    transform: translateY(-3px); /* Hover lift effekti */
+    transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
 
-/* --- 3. İş Təcrübəsi (Timeline) --- */
+/* --- 3. İş Təcrübəsi Klasları --- */
 .experience-section {
     padding: 80px 8%;
     background-color: #ffffff;
@@ -125,7 +125,6 @@ body {
 .experience-section h2, .projects-section h2, .achievements-section h2 {
     font-size: 30px;
     margin-bottom: 40px;
-    position: relative;
 }
 
 .timeline {
@@ -143,68 +142,93 @@ body {
 .timeline-item h4 { color: #7f8c8d; font-weight: 500; margin: 5px 0; }
 .date { font-size: 13px; color: #e1b12c; font-weight: bold; }
 
-/* --- 4. Layihələr Kart Komponentləri (Sənəddəki Tapşırıq 2 & 5) --- */
+/* --- 4. Layihələr (Responsive Grid & Card Komponentləri) --- */
 .projects-section {
     padding: 80px 8%;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive Grid */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
 .project-card {
     background-color: #ffffff;
     border-radius: 8px;
-    overflow: hidden; /* Şəklin künclərini kartın radiusuna uyğun kəsir */
+    overflow: hidden; /* Şəkillərin künclərini kartın radiusuna uyğun kəsmək üçün */
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-8px); /* Lift effekti */
+    transform: translateY(-8px); /* Kartın yuxarı qalxma (lift) effekti */
     box-shadow: 0 12px 25px rgba(0,0,0,0.08);
 }
 
 .card-img img {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* Ölçüləri pozmadan doldurma */
+    object-fit: cover; /* Şəkilləri əzilmədən sahəyə sığdırır */
 }
 
 .card-body {
     padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-body h3 {
     margin-bottom: 10px;
     font-size: 19px;
+    color: #1e272e;
 }
 
 .card-body p {
     font-size: 14px;
     color: #718093;
     margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-bottom: 20px;
 }
 
 .tag {
-    background-color: #f1f2f6;
-    color: #2f3542;
+    background-color: #e8f4fd;
+    color: #3498db;
     padding: 4px 10px;
     font-size: 11px;
     font-weight: 600;
     border-radius: 4px;
-    text-transform: uppercase;
 }
 
-/* --- 5. Nailiyyətlər (CSS Grid tapşırığı) --- */
+.card-btn {
+    display: block;
+    text-align: center;
+    background-color: #2c3e50;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.card-btn:hover {
+    background-color: #34495e;
+}
+
+/* --- 5. Nailiyyətlər Klasları (CSS Grid) --- */
 .achievements-section {
     padding: 80px 8%;
     background-color: #f1f2f6;
@@ -239,7 +263,7 @@ body {
     color: #718093;
 }
 
-/* --- 6. Əlaqə və Footer --- */
+/* --- 6. Əlaqə və Footer Klasları --- */
 .contact-section {
     padding: 80px 8%;
     background-color: #ffffff;
