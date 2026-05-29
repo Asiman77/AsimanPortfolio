@@ -10,36 +10,80 @@
 </head>
 <body>
 
-<!-- PAGE LOAD OVERLAY -->
+<!-- ===== PAGE LOAD OVERLAY + LANGUAGE PICKER ===== -->
 <div class="page-overlay" id="pageOverlay">
-    <div class="page-overlay-logo">Asiman<span>.dev</span></div>
+    <div class="overlay-intro" id="overlayIntro">
+        <div class="page-overlay-logo">Asiman<span>.dev</span></div>
+    </div>
+    <div class="lang-picker" id="langPicker">
+        <div class="lang-picker-inner">
+            <div class="lang-picker-logo">Asiman<span>.dev</span></div>
+            <p class="lang-picker-sub" id="langPickerSub">Dil seçin / Choose language</p>
+            <div class="lang-options">
+                <button class="lang-option" id="btnAZ" onclick="chooseLang('az')">
+                    <span class="lang-flag">🇦🇿</span>
+                    <span class="lang-name">Azərbaycan</span>
+                    <span class="lang-native">AZE</span>
+                </button>
+                <button class="lang-option" id="btnEN" onclick="chooseLang('en')">
+                    <span class="lang-flag">🇬🇧</span>
+                    <span class="lang-name">English</span>
+                    <span class="lang-native">ENG</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 
+<!-- ===== NAVBAR ===== -->
 <header class="navbar" id="navbar">
     <div class="logo">Asiman<span>.dev</span></div>
     <nav class="nav-links">
-        <a href="#about">Haqqımda</a>
-        <a href="#skills">Bacarıqlar</a>
-        <a href="#education">Təhsil</a>
-        <a href="#experience">Təcrübə</a>
-        <a href="#projects">Layihələr</a>
-        <a href="#achievements">Uğurlar</a>
-        <a href="#contact">Əlaqə</a>
+        <a href="#about"    data-az="Haqqımda"   data-en="About">Haqqımda</a>
+        <a href="#skills"   data-az="Bacarıqlar"  data-en="Skills">Bacarıqlar</a>
+        <a href="#education" data-az="Təhsil"    data-en="Education">Təhsil</a>
+        <a href="#experience" data-az="Təcrübə"  data-en="Experience">Təcrübə</a>
+        <a href="#projects" data-az="Layihələr"  data-en="Projects">Layihələr</a>
+        <a href="#achievements" data-az="Uğurlar" data-en="Achievements">Uğurlar</a>
+        <a href="#contact"  data-az="Əlaqə"      data-en="Contact">Əlaqə</a>
     </nav>
+    <button class="lang-toggle" id="langToggle" onclick="toggleLang()" title="Switch language">
+        <span class="lang-toggle-flag" id="langToggleFlag">🇦🇿</span>
+        <span class="lang-toggle-code" id="langToggleCode">AZ</span>
+        <i class="fas fa-chevron-down" style="font-size:0.65rem;opacity:0.6"></i>
+    </button>
 </header>
 
+<!-- ===== HERO ===== -->
 <section id="about" class="hero-section">
     <div class="hero-dots"></div>
     <div class="hero-container-box">
         <div class="hero-content">
-            <span class="subtitle">Xəzər Universiteti — Kompüter Elmləri (2023 - Cari)</span>
+            <span class="subtitle"
+                  data-az="Xəzər Universiteti — Kompüter Elmləri (2023 - Cari)"
+                  data-en="Khazar University — Computer Science (2023 - Present)">
+                Xəzər Universiteti — Kompüter Elmləri (2023 - Cari)
+            </span>
             <h1 class="hero-title">Asiman<br><span class="highlight">Mirzəliyev</span></h1>
-            <h2 class="hero-lead-text">Yüksək məhsuldarlıqlı API və scalable backend sistemlərinin memarlığı üzrə backend tərtibatçısı.</h2>
-            <p class="hero-description">Python/Django və Java/Spring Boot ekosistemində irimiqyaslı rəqəmsal transformasiya layihələri, asinxron data emalı və relyasiyalı verilənlər bazalarının optimizasiyası üzrə praktiki təcrübə.</p>
+            <h2 class="hero-lead-text"
+                data-az="Yüksək məhsuldarlıqlı API və scalable backend sistemlərinin memarlığı üzrə backend tərtibatçısı."
+                data-en="Backend developer specializing in high-performance APIs and scalable backend system architecture.">
+                Yüksək məhsuldarlıqlı API və scalable backend sistemlərinin memarlığı üzrə backend tərtibatçısı.
+            </h2>
+            <p class="hero-description"
+               data-az="Python/Django və Java/Spring Boot ekosistemində irimiqyaslı rəqəmsal transformasiya layihələri, asinxron data emalı və relyasiyalı verilənlər bazalarının optimizasiyası üzrə praktiki təcrübə."
+               data-en="Hands-on experience in large-scale digital transformation projects, asynchronous data processing and relational database optimization within the Python/Django and Java/Spring Boot ecosystems.">
+                Python/Django və Java/Spring Boot ekosistemində irimiqyaslı rəqəmsal transformasiya layihələri, asinxron data emalı və relyasiyalı verilənlər bazalarının optimizasiyası üzrə praktiki təcrübə.
+            </p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn primary-btn"><i class="fas fa-code"></i> Layihələrimə Bax</a>
-                <a href="https://www.linkedin.com/in/asiman-dev/" target="_blank" class="btn linkedin-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-
+                <a href="#projects" class="btn primary-btn"
+                   data-az="<i class='fas fa-code'></i> Layihələrimə Bax"
+                   data-en="<i class='fas fa-code'></i> View My Projects">
+                    <i class="fas fa-code"></i> Layihələrimə Bax
+                </a>
+                <a href="https://www.linkedin.com/in/asiman-dev/" target="_blank" class="btn linkedin-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
             </div>
         </div>
         <div class="hero-image-box">
@@ -50,11 +94,12 @@
     </div>
 </section>
 
+<!-- ===== SKILLS ===== -->
 <section id="skills" class="skills-section fade-up">
-    <h2>Texniki Bacarıqlarım</h2>
+    <h2 data-az="Texniki Bacarıqlarım" data-en="Technical Skills">Texniki Bacarıqlarım</h2>
     <div class="skills-container">
         <div class="skill-category">
-            <h3><i class="fas fa-code"></i> Dillər & Frameworklər</h3>
+            <h3><i class="fas fa-code"></i> <span data-az="Dillər & Frameworklər" data-en="Languages & Frameworks">Dillər & Frameworklər</span></h3>
             <div class="skill-list">
                 <span class="skill-item">Java 17</span>
                 <span class="skill-item">Spring Boot</span>
@@ -65,7 +110,7 @@
             </div>
         </div>
         <div class="skill-category">
-            <h3><i class="fas fa-tools"></i> Alətlər & Texnologiyalar</h3>
+            <h3><i class="fas fa-tools"></i> <span data-az="Alətlər & Texnologiyalar" data-en="Tools & Technologies">Alətlər & Texnologiyalar</span></h3>
             <div class="skill-list">
                 <span class="skill-item">Docker</span>
                 <span class="skill-item">Redis</span>
@@ -78,25 +123,38 @@
     </div>
 </section>
 
+<!-- ===== EDUCATION ===== -->
 <section id="education" class="education-section fade-up">
-    <h2>Təhsil və Kurslar</h2>
+    <h2 data-az="Təhsil və Kurslar" data-en="Education & Courses">Təhsil və Kurslar</h2>
     <div class="education-grid">
+
         <div class="education-card">
             <div class="edu-header-box">
                 <div class="edu-title-group">
-                    <h3>B.S. Kompüter Elmləri</h3>
-                    <h4>Xəzər Universiteti</h4>
+                    <h3 data-az="B.S. Kompüter Elmləri" data-en="B.S. Computer Science">B.S. Kompüter Elmləri</h3>
+                    <h4 data-az="Xəzər Universiteti" data-en="Khazar University">Xəzər Universiteti</h4>
                 </div>
                 <div class="edu-link-group">
-                    <span class="edu-link-label">Transkriptə keçid</span>
-                    <a href="assets/transkript.pdf" target="_blank" class="transcript-link">
+                    <span class="edu-link-label" data-az="Transkriptə keçid" data-en="View Transcript">Transkriptə keçid</span>
+                    <a href="assets/transkript.pdf" target="_blank" class="transcript-link"
+                       data-az="<i class='fas fa-file-pdf'></i> Transkript"
+                       data-en="<i class='fas fa-file-pdf'></i> Transcript">
                         <i class="fas fa-file-pdf"></i> Transkript
                     </a>
                 </div>
             </div>
-            <p class="edu-date">2023 — 2027 (Gözlənilir)</p>
-            <p class="edu-desc">OOP prinsipləri, Verilənlərin Strukturu və Alqoritmlərin Analizi üzrə dərindən akademik mühəndislik təməli. Core GPA: 87.08</p>
+            <p class="edu-date"
+               data-az="2023 — 2027 (Gözlənilir)"
+               data-en="2023 — 2027 (Expected)">
+                2023 — 2027 (Gözlənilir)
+            </p>
+            <p class="edu-desc"
+               data-az="OOP prinsipləri, Verilənlərin Strukturu və Alqoritmlərin Analizi üzrə dərindən akademik mühəndislik təməli. Core GPA: 87.08"
+               data-en="Deep academic engineering foundation in OOP principles, Data Structures and Algorithm Analysis. Core GPA: 87.08">
+                OOP prinsipləri, Verilənlərin Strukturu və Alqoritmlərin Analizi üzrə dərindən akademik mühəndislik təməli. Core GPA: 87.08
+            </p>
         </div>
+
         <div class="education-card">
             <div class="edu-header-box">
                 <div class="edu-title-group">
@@ -104,9 +162,18 @@
                     <h4>Ironhack / İDDA (ITSkillSprint)</h4>
                 </div>
             </div>
-            <p class="edu-date">2026 (Gözlənilir)</p>
-            <p class="edu-desc">Java/Spring Boot ilə irimiqyaslı backend servisləri, müasir frontend fundamentləri və süni intellekt (AI/LLM) API inteqrasiyaları.</p>
+            <p class="edu-date"
+               data-az="2026 (Gözlənilir)"
+               data-en="2026 (Expected)">
+                2026 (Gözlənilir)
+            </p>
+            <p class="edu-desc"
+               data-az="Java/Spring Boot ilə irimiqyaslı backend servisləri, müasir frontend fundamentləri və süni intellekt (AI/LLM) API inteqrasiyaları."
+               data-en="Large-scale backend services with Java/Spring Boot, modern frontend fundamentals and artificial intelligence (AI/LLM) API integrations.">
+                Java/Spring Boot ilə irimiqyaslı backend servisləri, müasir frontend fundamentləri və süni intellekt (AI/LLM) API inteqrasiyaları.
+            </p>
         </div>
+
         <div class="education-card">
             <div class="edu-header-box">
                 <div class="edu-title-group">
@@ -114,21 +181,28 @@
                     <h4>ATL Academy / İDDA (Technest)</h4>
                 </div>
                 <div class="edu-link-group">
-                    <span class="edu-link-label">Sertifikata keçid</span>
-                    <a href="assets/graduation.jpg" target="_blank" class="cert-link">
+                    <span class="edu-link-label" data-az="Sertifikata keçid" data-en="View Certificate">Sertifikata keçid</span>
+                    <a href="assets/graduation.jpg" target="_blank" class="cert-link"
+                       data-az="<i class='fas fa-certificate'></i> Sertifikat"
+                       data-en="<i class='fas fa-certificate'></i> Certificate">
                         <i class="fas fa-certificate"></i> Sertifikat
                     </a>
                 </div>
             </div>
             <p class="edu-date">2025-07</p>
-            <p class="edu-desc">Advanced Java, asinxron proqramlaşdırma (Multithreading), Spring Boot mikroservisləri, PostgreSQL memarlığı və Swagger API dizaynı.</p>
+            <p class="edu-desc"
+               data-az="Advanced Java, asinxron proqramlaşdırma (Multithreading), Spring Boot mikroservisləri, PostgreSQL memarlığı və Swagger API dizaynı."
+               data-en="Advanced Java, asynchronous programming (Multithreading), Spring Boot microservices, PostgreSQL architecture and Swagger API design.">
+                Advanced Java, asinxron proqramlaşdırma (Multithreading), Spring Boot mikroservisləri, PostgreSQL memarlığı və Swagger API dizaynı.
+            </p>
         </div>
+
     </div>
 </section>
 
-<!-- EXPERIENCE — PREMIUM DARK TIMELINE -->
+<!-- ===== EXPERIENCE ===== -->
 <section id="experience" class="experience-section fade-up">
-    <h2>İş Təcrübəm</h2>
+    <h2 data-az="İş Təcrübəm" data-en="Work Experience">İş Təcrübəm</h2>
     <div class="timeline">
 
         <div class="timeline-item">
@@ -139,20 +213,30 @@
                         <h3>Backend Developer</h3>
                         <h4>4SİM Azərbaycan / C4IR Azerbaijan</h4>
                     </div>
-                    <span class="exp-badge">Tam Ştat</span>
+                    <span class="exp-badge" data-az="Tam Ştat" data-en="Full-Time">Tam Ştat</span>
                 </div>
                 <p class="date">2026-02 — 2026-05</p>
                 <ul class="exp-bullets">
-                    <li>Java və Spring Boot ilə yüksək effektli rəqəmsal transformasiya layihələrinin robust backend sistemlərinin qurulması</li>
-                    <li>RESTful API dizaynı və Swagger/OpenAPI standartları ilə texniki dokumentasiyanın aparılması</li>
-                    <li>PostgreSQL üzərində relyasiyalı verilənlər bazası sxemalarının arxitekturası və query optimizasiyası</li>
-                    <li>Spring Data JPA və multithreading texnikaları ilə scalable backend servislərin inşası</li>
+                    <li data-az="Java və Spring Boot ilə yüksək effektli rəqəmsal transformasiya layihələrinin robust backend sistemlərinin qurulması"
+                        data-en="Building robust backend systems for high-impact digital transformation projects using Java and Spring Boot">
+                        Java və Spring Boot ilə yüksək effektli rəqəmsal transformasiya layihələrinin robust backend sistemlərinin qurulması
+                    </li>
+                    <li data-az="RESTful API dizaynı və Swagger/OpenAPI standartları ilə texniki dokumentasiyanın aparılması"
+                        data-en="Designing RESTful APIs and maintaining technical documentation using Swagger/OpenAPI standards">
+                        RESTful API dizaynı və Swagger/OpenAPI standartları ilə texniki dokumentasiyanın aparılması
+                    </li>
+                    <li data-az="PostgreSQL üzərində relyasiyalı verilənlər bazası sxemalarının arxitekturası və query optimizasiyası"
+                        data-en="Architecting relational database schemas on PostgreSQL and optimizing queries for data integrity">
+                        PostgreSQL üzərində relyasiyalı verilənlər bazası sxemalarının arxitekturası və query optimizasiyası
+                    </li>
+                    <li data-az="Spring Data JPA və multithreading texnikaları ilə scalable backend servislərin inşası"
+                        data-en="Building scalable backend services with Spring Data JPA and multithreading techniques">
+                        Spring Data JPA və multithreading texnikaları ilə scalable backend servislərin inşası
+                    </li>
                 </ul>
                 <div class="exp-tech-stack">
-                    <span class="exp-tech">Java 17</span>
-                    <span class="exp-tech">Spring Boot</span>
-                    <span class="exp-tech">PostgreSQL</span>
-                    <span class="exp-tech">Swagger</span>
+                    <span class="exp-tech">Java 17</span><span class="exp-tech">Spring Boot</span>
+                    <span class="exp-tech">PostgreSQL</span><span class="exp-tech">Swagger</span>
                     <span class="exp-tech">Docker</span>
                 </div>
             </div>
@@ -166,20 +250,30 @@
                         <h3>Junior Backend Developer</h3>
                         <h4>Kodaze Ltd.</h4>
                     </div>
-                    <span class="exp-badge">Tam Ştat</span>
+                    <span class="exp-badge" data-az="Tam Ştat" data-en="Full-Time">Tam Ştat</span>
                 </div>
                 <p class="date">2025-06 — 2025-09</p>
                 <ul class="exp-bullets">
-                    <li>Django Rest Framework ilə yüksək performanslı, təhlükəsiz RESTful API-ların mühəndisliyi</li>
-                    <li>Unit testlər + Postman/Swagger inteqrasiya testləri ilə 99% kod etibarlılığının təmin edilməsi</li>
-                    <li>Docker konteynerizasiyası ilə development mühitinin standartlaşdırılması</li>
-                    <li>MVT arxitekturası prinsipləri əsasında maintainable software həllərinin qurulması</li>
+                    <li data-az="Django Rest Framework ilə yüksək performanslı, təhlükəsiz RESTful API-ların mühəndisliyi"
+                        data-en="Engineering high-performance, secure RESTful APIs with Django Rest Framework">
+                        Django Rest Framework ilə yüksək performanslı, təhlükəsiz RESTful API-ların mühəndisliyi
+                    </li>
+                    <li data-az="Unit testlər + Postman/Swagger inteqrasiya testləri ilə 99% kod etibarlılığının təmin edilməsi"
+                        data-en="Ensuring 99% code reliability with unit tests and Postman/Swagger integration testing">
+                        Unit testlər + Postman/Swagger inteqrasiya testləri ilə 99% kod etibarlılığının təmin edilməsi
+                    </li>
+                    <li data-az="Docker konteynerizasiyası ilə development mühitinin standartlaşdırılması"
+                        data-en="Standardizing development environments with Docker containerization">
+                        Docker konteynerizasiyası ilə development mühitinin standartlaşdırılması
+                    </li>
+                    <li data-az="MVT arxitekturası prinsipləri əsasında maintainable software həllərinin qurulması"
+                        data-en="Building maintainable software solutions based on MVT architecture principles">
+                        MVT arxitekturası prinsipləri əsasında maintainable software həllərinin qurulması
+                    </li>
                 </ul>
                 <div class="exp-tech-stack">
-                    <span class="exp-tech">Python</span>
-                    <span class="exp-tech">Django DRF</span>
-                    <span class="exp-tech">PostgreSQL</span>
-                    <span class="exp-tech">Docker</span>
+                    <span class="exp-tech">Python</span><span class="exp-tech">Django DRF</span>
+                    <span class="exp-tech">PostgreSQL</span><span class="exp-tech">Docker</span>
                     <span class="exp-tech">Postman</span>
                 </div>
             </div>
@@ -190,22 +284,29 @@
             <div class="timeline-card">
                 <div class="exp-header">
                     <div class="exp-title-group">
-                        <h3>Backend Developer Intern</h3>
+                        <h3 data-az="Backend Developer Intern" data-en="Backend Developer Intern">Backend Developer Intern</h3>
                         <h4>Kodaze Ltd.</h4>
                     </div>
-                    <span class="exp-badge">Staj</span>
+                    <span class="exp-badge" data-az="Staj" data-en="Internship">Staj</span>
                 </div>
                 <p class="date">2025-02 — 2025-05</p>
                 <ul class="exp-bullets">
-                    <li>Django və PostgreSQL ilə server-side məntiq və verilənlər bazası interaksiyaları üzrə praktiki iş təcrübəsi</li>
-                    <li>InkreDo.az (İslam maliyyəsi) və Korrektor.az platformaları üçün əsas backend xüsusiyyətlərinin hazırlanması</li>
-                    <li>Redis keşləmə və SQL sorğularının optimizasiyası ilə server cavab vaxtlarının əhəmiyyətli dərəcədə azaldılması</li>
+                    <li data-az="Django və PostgreSQL ilə server-side məntiq və verilənlər bazası interaksiyaları üzrə praktiki iş təcrübəsi"
+                        data-en="Hands-on experience in server-side logic and database interactions using Django and PostgreSQL">
+                        Django və PostgreSQL ilə server-side məntiq və verilənlər bazası interaksiyaları üzrə praktiki iş təcrübəsi
+                    </li>
+                    <li data-az="InkreDo.az (İslam maliyyəsi) və Korrektor.az platformaları üçün əsas backend xüsusiyyətlərinin hazırlanması"
+                        data-en="Developing core backend features for InkreDo.az (Islamic finance) and Korrektor.az platforms">
+                        InkreDo.az (İslam maliyyəsi) və Korrektor.az platformaları üçün əsas backend xüsusiyyətlərinin hazırlanması
+                    </li>
+                    <li data-az="Redis keşləmə və SQL sorğularının optimizasiyası ilə server cavab vaxtlarının əhəmiyyətli dərəcədə azaldılması"
+                        data-en="Significantly reducing server response times with Redis caching and SQL query optimization">
+                        Redis keşləmə və SQL sorğularının optimizasiyası ilə server cavab vaxtlarının əhəmiyyətli dərəcədə azaldılması
+                    </li>
                 </ul>
                 <div class="exp-tech-stack">
-                    <span class="exp-tech">Python</span>
-                    <span class="exp-tech">Django</span>
-                    <span class="exp-tech">Redis</span>
-                    <span class="exp-tech">PostgreSQL</span>
+                    <span class="exp-tech">Python</span><span class="exp-tech">Django</span>
+                    <span class="exp-tech">Redis</span><span class="exp-tech">PostgreSQL</span>
                     <span class="exp-tech">Git</span>
                 </div>
             </div>
@@ -214,16 +315,17 @@
     </div>
 </section>
 
+<!-- ===== PROJECTS ===== -->
 <section id="projects" class="projects-section fade-up">
     <div class="projects-header">
-        <h2>Önə Çıxan Layihələr</h2>
+        <h2 data-az="Önə Çıxan Layihələr" data-en="Featured Projects">Önə Çıxan Layihələr</h2>
         <a href="https://github.com/Asiman77" target="_blank" class="github-profile-btn">
-            <i class="fab fa-github"></i> GitHub Profilim
+            <i class="fab fa-github"></i>
+            <span data-az="GitHub Profilim" data-en="My GitHub Profile">GitHub Profilim</span>
         </a>
     </div>
     <div class="projects-grid">
 
-        <!-- PUBLIC PROJECT 1 -->
         <div class="project-card">
             <div class="card-img">
                 <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=80" alt="Examme Platform">
@@ -231,21 +333,21 @@
             </div>
             <div class="card-body">
                 <h3>Examme — Smart Examination Platform</h3>
-                <p>Google Gemini AI inteqrasiyalı, mühazirə mətnlərindən avtomatik sual generasiya edən imtahan platforması. JWT Refresh Token rotasiyası və Docker-compose orkestrasiyası ilə qurulub.</p>
+                <p data-az="Google Gemini AI inteqrasiyalı, mühazirə mətnlərindən avtomatik sual generasiya edən imtahan platforması. JWT Refresh Token rotasiyası və Docker-compose orkestrasiyası ilə qurulub."
+                   data-en="An exam platform with Google Gemini AI integration that automatically generates questions from lecture texts. Built with JWT Refresh Token rotation and Docker-compose orchestration.">
+                    Google Gemini AI inteqrasiyalı, mühazirə mətnlərindən avtomatik sual generasiya edən imtahan platforması. JWT Refresh Token rotasiyası və Docker-compose orkestrasiyası ilə qurulub.
+                </p>
                 <div class="tags">
-                    <span class="tag">Java 17</span>
-                    <span class="tag">Spring Boot 3.3</span>
-                    <span class="tag">Gemini AI</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">JWT</span>
+                    <span class="tag">Java 17</span><span class="tag">Spring Boot 3.3</span>
+                    <span class="tag">Gemini AI</span><span class="tag">Docker</span><span class="tag">JWT</span>
                 </div>
                 <a href="https://github.com/ExamineMeProject/Examme-Backend" target="_blank" class="card-btn">
-                    <i class="fab fa-github"></i> Repository-ə Keçid
+                    <i class="fab fa-github"></i>
+                    <span data-az="Repository-ə Keçid" data-en="View Repository">Repository-ə Keçid</span>
                 </a>
             </div>
         </div>
 
-        <!-- PUBLIC PROJECT 2 -->
         <div class="project-card">
             <div class="card-img">
                 <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=500&q=80" alt="Smart Tourism">
@@ -253,63 +355,73 @@
             </div>
             <div class="card-body">
                 <h3>Smart Tourism Booking Platform</h3>
-                <p>Turistlər, agentliklər və adminlər üçün rola əsaslanan (RBAC) idarəetmə sisteminə malik turizm marketplace platforması. BCrypt şifrələməsi və təmiz Spring Security süzgəcləri tətbiq olunub.</p>
+                <p data-az="Turistlər, agentliklər və adminlər üçün rola əsaslanan (RBAC) idarəetmə sisteminə malik turizm marketplace platforması. BCrypt şifrələməsi və təmiz Spring Security süzgəcləri tətbiq olunub."
+                   data-en="A tourism marketplace platform with role-based (RBAC) management for tourists, agencies and admins. BCrypt encryption and clean Spring Security filters implemented.">
+                    Turistlər, agentliklər və adminlər üçün rola əsaslanan (RBAC) idarəetmə sisteminə malik turizm marketplace platforması. BCrypt şifrələməsi və təmiz Spring Security süzgəcləri tətbiq olunub.
+                </p>
                 <div class="tags">
-                    <span class="tag">Spring Security</span>
-                    <span class="tag">JWT</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">Spring Data JPA</span>
+                    <span class="tag">Spring Security</span><span class="tag">JWT</span>
+                    <span class="tag">MySQL</span><span class="tag">Spring Data JPA</span>
                 </div>
                 <a href="https://github.com/Asiman77/SmartTourism" target="_blank" class="card-btn">
-                    <i class="fab fa-github"></i> Repository-ə Keçid
+                    <i class="fab fa-github"></i>
+                    <span data-az="Repository-ə Keçid" data-en="View Repository">Repository-ə Keçid</span>
                 </a>
             </div>
         </div>
 
-        <!-- PRIVATE PROJECT: InkreDo -->
         <div class="project-card">
             <div class="card-img">
                 <div class="card-img-placeholder">
                     <i class="fas fa-lock"></i>
-                    <span class="private-badge"><i class="fas fa-building"></i> Kodaze Ltd. — Şirkət Layihəsi</span>
+                    <span class="private-badge">
+                        <i class="fas fa-building"></i>
+                        <span data-az="Kodaze Ltd. — Şirkət Layihəsi" data-en="Kodaze Ltd. — Company Project">Kodaze Ltd. — Şirkət Layihəsi</span>
+                    </span>
                 </div>
             </div>
             <div class="card-body">
-                <h3>InkreDo.az — İslam Fintech Platforması</h3>
+                <h3 data-az="InkreDo.az — İslam Fintech Platforması" data-en="InkreDo.az — Islamic Fintech Platform">InkreDo.az — İslam Fintech Platforması</h3>
                 <div class="card-company"><i class="fas fa-building"></i> Kodaze Ltd.</div>
-                <p>İslam maliyyəsi prinsiplərinə əsaslanan fintech platformasının backend infrastrukturu. Redis keşləmə, PostgreSQL optimizasiyası və DRF ilə yüksək yüklü sorğu arxitekturası qurulub.</p>
+                <p data-az="İslam maliyyəsi prinsiplərinə əsaslanan fintech platformasının backend infrastrukturu. Redis keşləmə, PostgreSQL optimizasiyası və DRF ilə yüksək yüklü sorğu arxitekturası qurulub."
+                   data-en="Backend infrastructure for a fintech platform based on Islamic finance principles. High-load query architecture built with Redis caching, PostgreSQL optimization and DRF.">
+                    İslam maliyyəsi prinsiplərinə əsaslanan fintech platformasının backend infrastrukturu. Redis keşləmə, PostgreSQL optimizasiyası və DRF ilə yüksək yüklü sorğu arxitekturası qurulub.
+                </p>
                 <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Django DRF</span>
-                    <span class="tag">Redis</span>
-                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Python</span><span class="tag">Django DRF</span>
+                    <span class="tag">Redis</span><span class="tag">PostgreSQL</span>
                 </div>
                 <a class="card-btn private">
-                    <i class="fas fa-lock"></i> Private Repository
+                    <i class="fas fa-lock"></i>
+                    <span data-az="Private Repository" data-en="Private Repository">Private Repository</span>
                 </a>
             </div>
         </div>
 
-        <!-- PRIVATE PROJECT: Korrektor -->
         <div class="project-card">
             <div class="card-img">
                 <div class="card-img-placeholder">
                     <i class="fas fa-lock"></i>
-                    <span class="private-badge"><i class="fas fa-building"></i> Kodaze Ltd. — Şirkət Layihəsi</span>
+                    <span class="private-badge">
+                        <i class="fas fa-building"></i>
+                        <span data-az="Kodaze Ltd. — Şirkət Layihəsi" data-en="Kodaze Ltd. — Company Project">Kodaze Ltd. — Şirkət Layihəsi</span>
+                    </span>
                 </div>
             </div>
             <div class="card-body">
-                <h3>Korrektor.az — Proofreading Platforması</h3>
+                <h3 data-az="Korrektor.az — Proofreading Platforması" data-en="Korrektor.az — Proofreading Platform">Korrektor.az — Proofreading Platforması</h3>
                 <div class="card-company"><i class="fas fa-building"></i> Kodaze Ltd.</div>
-                <p>Mətn düzəliş və proofreading xidmətlərini avtomatlaşdıran backend sistemi. MVT arxitekturası, modular servis layları və Postman/Swagger ilə tam sənədləşdirilmiş API-lar daxildir.</p>
+                <p data-az="Mətn düzəliş və proofreading xidmətlərini avtomatlaşdıran backend sistemi. MVT arxitekturası, modular servis layları və Postman/Swagger ilə tam sənədləşdirilmiş API-lar daxildir."
+                   data-en="A backend system that automates text editing and proofreading services. Includes MVT architecture, modular service layers and fully documented APIs with Postman/Swagger.">
+                    Mətn düzəliş və proofreading xidmətlərini avtomatlaşdıran backend sistemi. MVT arxitekturası, modular servis layları və Postman/Swagger ilə tam sənədləşdirilmiş API-lar daxildir.
+                </p>
                 <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Django</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">Docker</span>
+                    <span class="tag">Python</span><span class="tag">Django</span>
+                    <span class="tag">PostgreSQL</span><span class="tag">Docker</span>
                 </div>
                 <a class="card-btn private">
-                    <i class="fas fa-lock"></i> Private Repository
+                    <i class="fas fa-lock"></i>
+                    <span data-az="Private Repository" data-en="Private Repository">Private Repository</span>
                 </a>
             </div>
         </div>
@@ -317,120 +429,236 @@
     </div>
 </section>
 
+<!-- ===== ACHIEVEMENTS ===== -->
 <section id="achievements" class="achievements-section fade-up">
-    <h2>Nailiyyətlər və Alqoritmik Uğurlar</h2>
+    <h2 data-az="Nailiyyətlər və Alqoritmik Uğurlar" data-en="Achievements & Algorithmic Wins">Nailiyyətlər və Alqoritmik Uğurlar</h2>
     <div class="achievements-grid">
         <div class="achievement-box">
-            <h3><i class="fas fa-train"></i> Bakı Metropoliteni Hackathon</h3>
-            <p>Nəqliyyat və infrastruktur mövzulu hackathonda iştirak edərək innovativ backend həllərinin və optimizasiya alqoritmlərinin hazırlanması.</p>
+            <h3><i class="fas fa-train"></i> <span data-az="Bakı Metropoliteni Hackathon" data-en="Baku Metro Hackathon">Bakı Metropoliteni Hackathon</span></h3>
+            <p data-az="Nəqliyyat və infrastruktur mövzulu hackathonda iştirak edərək innovativ backend həllərinin və optimizasiya alqoritmlərinin hazırlanması."
+               data-en="Participation in a transport & infrastructure hackathon, developing innovative backend solutions and optimization algorithms.">
+                Nəqliyyat və infrastruktur mövzulu hackathonda iştirak edərək innovativ backend həllərinin və optimizasiya alqoritmlərinin hazırlanması.
+            </p>
         </div>
         <div class="achievement-box">
-            <h3><i class="fas fa-trophy"></i> ICPC Yarımfinalçısı</h3>
-            <p>Beynəlxalq Proqramlaşdırma Müsabiqəsində yüksək analitik düşüncə və problem həll etmə üzrə yarımfinal mərhələsinə yüksəlmə.</p>
+            <h3><i class="fas fa-trophy"></i> <span data-az="ICPC Yarımfinalçısı" data-en="ICPC Semifinalist">ICPC Yarımfinalçısı</span></h3>
+            <p data-az="Beynəlxalq Proqramlaşdırma Müsabiqəsində yüksək analitik düşüncə və problem həll etmə üzrə yarımfinal mərhələsinə yüksəlmə."
+               data-en="Advancing to the semifinal stage of the International Collegiate Programming Contest, demonstrating strong analytical thinking and problem-solving.">
+                Beynəlxalq Proqramlaşdırma Müsabiqəsində yüksək analitik düşüncə və problem həll etmə üzrə yarımfinal mərhələsinə yüksəlmə.
+            </p>
         </div>
         <div class="achievement-box">
-            <h3><i class="fas fa-brain"></i> Riyaziyyat Olimpiadası</h3>
-            <p>Respublika səviyyəli Riyaziyyat Olimpiadasının Milli Finalçısı — güclü riyazi əsas və problem həll qabiliyyəti.</p>
+            <h3><i class="fas fa-brain"></i> <span data-az="Riyaziyyat Olimpiadası" data-en="Math Olympiad">Riyaziyyat Olimpiadası</span></h3>
+            <p data-az="Respublika səviyyəli Riyaziyyat Olimpiadasının Milli Finalçısı — güclü riyazi əsas və problem həll qabiliyyəti."
+               data-en="National Finalist of the Republic-level Mathematics Olympiad — strong mathematical foundation and problem-solving ability.">
+                Respublika səviyyəli Riyaziyyat Olimpiadasının Milli Finalçısı — güclü riyazi əsas və problem həll qabiliyyəti.
+            </p>
         </div>
         <div class="achievement-box">
-            <h3><i class="fas fa-chart-line"></i> PASHA Bank & UFAZ Hackathon</h3>
-            <p>Məhdud zaman çərçivəsində innovativ API və komanda daxilində çevik backend memarlığının qurulması.</p>
+            <h3><i class="fas fa-chart-line"></i> <span data-az="PASHA Bank & UFAZ Hackathon" data-en="PASHA Bank & UFAZ Hackathon">PASHA Bank & UFAZ Hackathon</span></h3>
+            <p data-az="Məhdud zaman çərçivəsində innovativ API və komanda daxilində çevik backend memarlığının qurulması."
+               data-en="Building innovative APIs and agile backend architecture within a team under tight time constraints.">
+                Məhdud zaman çərçivəsində innovativ API və komanda daxilində çevik backend memarlığının qurulması.
+            </p>
         </div>
         <div class="achievement-box">
-            <h3><i class="fas fa-star"></i> Əlaçı — Xəzər Universiteti</h3>
-            <p>Xəzər Universitetinin Əlaçı tələbəsi — ardıcıl yüksək akademik nəticə və GPA: 87.08 ilə fərqlənmə.</p>
+            <h3><i class="fas fa-star"></i> <span data-az="Əlaçı — Xəzər Universiteti" data-en="Honor Student — Khazar University">Əlaçı — Xəzər Universiteti</span></h3>
+            <p data-az="Xəzər Universitetinin Əlaçı tələbəsi — ardıcıl yüksək akademik nəticə və GPA: 87.08 ilə fərqlənmə."
+               data-en="Honor student at Khazar University — consistently outstanding academic performance with GPA: 87.08.">
+                Xəzər Universitetinin Əlaçı tələbəsi — ardıcıl yüksək akademik nəticə və GPA: 87.08 ilə fərqlənmə.
+            </p>
         </div>
         <div class="achievement-box">
-            <h3><i class="fas fa-users"></i> Brain Ring — Yarımfinalçı</h3>
-            <p>Brain Ring intellektual müsabiqəsinin yarımfinalına yüksəlmə — sürətli məntiq və komanda əməkdaşlığı.</p>
+            <h3><i class="fas fa-users"></i> <span data-az="Brain Ring — Yarımfinalçı" data-en="Brain Ring — Semifinalist">Brain Ring — Yarımfinalçı</span></h3>
+            <p data-az="Brain Ring intellektual müsabiqəsinin yarımfinalına yüksəlmə — sürətli məntiq və komanda əməkdaşlığı."
+               data-en="Advancing to the semifinal of the Brain Ring intellectual competition — fast logic and team collaboration under pressure.">
+                Brain Ring intellektual müsabiqəsinin yarımfinalına yüksəlmə — sürətli məntiq və komanda əməkdaşlığı.
+            </p>
         </div>
     </div>
 </section>
 
+<!-- ===== CONTACT ===== -->
 <section id="contact" class="contact-section fade-up">
-    <h2>Mənimlə Əlaqə</h2>
-    <p>Layihələr, backend arxitekturası və ya iş təklifləri üçün əlaqə saxlaya bilərsiniz.</p>
+    <h2 data-az="Mənimlə Əlaqə" data-en="Get In Touch">Mənimlə Əlaqə</h2>
+    <p data-az="Layihələr, backend arxitekturası və ya iş təklifləri üçün əlaqə saxlaya bilərsiniz."
+       data-en="Feel free to reach out for projects, backend architecture discussions, or job opportunities.">
+        Layihələr, backend arxitekturası və ya iş təklifləri üçün əlaqə saxlaya bilərsiniz.
+    </p>
     <div class="contact-info">
         <p><i class="fas fa-envelope"></i> asimanmirza06@gmail.com</p>
         <p><i class="fas fa-phone-alt"></i> +994 55 785 8119</p>
     </div>
     <div class="contact-buttons">
-        <a href="mailto:asimanmirza06@gmail.com" class="btn primary-btn"><i class="fas fa-paper-plane"></i> E-poçt Göndər</a>
-        <a href="https://www.linkedin.com/in/asiman-dev/" target="_blank" class="btn linkedin-btn"><i class="fab fa-linkedin"></i> LinkedIn'də Qoşul</a>
-        <a href="https://github.com/Asiman77" target="_blank" class="btn ghost-btn"><i class="fab fa-github"></i> GitHub</a>
+        <a href="mailto:asimanmirza06@gmail.com" class="btn primary-btn">
+            <i class="fas fa-paper-plane"></i>
+            <span data-az="E-poçt Göndər" data-en="Send Email">E-poçt Göndər</span>
+        </a>
+        <a href="https://www.linkedin.com/in/asiman-dev/" target="_blank" class="btn linkedin-btn">
+            <i class="fab fa-linkedin"></i>
+            <span data-az="LinkedIn'də Qoşul" data-en="Connect on LinkedIn">LinkedIn'də Qoşul</span>
+        </a>
+        <a href="https://github.com/Asiman77" target="_blank" class="btn ghost-btn">
+            <i class="fab fa-github"></i> GitHub
+        </a>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 Asiman Mirzəliyev. Kodaze, 4SİM və Ironhack təcrübələri ilə hazırlanmışdır.</p>
+    <p data-az="&copy; 2026 Asiman Mirzəliyev. Kodaze, 4SİM və Ironhack təcrübələri ilə hazırlanmışdır."
+       data-en="&copy; 2026 Asiman Mirzəliyev. Crafted with experience from Kodaze, 4SİM and Ironhack.">
+        &copy; 2026 Asiman Mirzəliyev. Kodaze, 4SİM və Ironhack təcrübələri ilə hazırlanmışdır.
+    </p>
 </footer>
 
 <script>
-    // Remove overlay after animation
-    setTimeout(() => {
+    // ============================================================
+    //  LANGUAGE SYSTEM
+    // ============================================================
+    let currentLang = localStorage.getItem('portfolioLang') || null;
+
+    const translations = {
+        az: { flag: '🇦🇿', code: 'AZ', title: 'Asiman Mirzəliyev | Backend Developer Portfolio' },
+        en: { flag: '🇬🇧', code: 'EN', title: 'Asiman Mirzəliyev | Backend Developer Portfolio' }
+    };
+
+    function applyLang(lang) {
+        currentLang = lang;
+        localStorage.setItem('portfolioLang', lang);
+        document.documentElement.lang = lang;
+        document.title = translations[lang].title;
+
+        document.querySelectorAll('[data-az], [data-en]').forEach(el => {
+            const text = el.getAttribute('data-' + lang);
+            if (text !== null) {
+                if (text.includes('<')) {
+                    el.innerHTML = text;
+                } else {
+                    el.textContent = text;
+                }
+            }
+        });
+
+        const t = translations[lang];
+        document.getElementById('langToggleFlag').textContent = t.flag;
+        document.getElementById('langToggleCode').textContent = t.code;
+
+        document.querySelectorAll('.lang-option').forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.getElementById('btn' + lang.toUpperCase());
+        if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    function chooseLang(lang) {
+        applyLang(lang);
+        const picker = document.getElementById('langPicker');
         const overlay = document.getElementById('pageOverlay');
-        if (overlay) overlay.style.display = 'none';
-    }, 1600);
 
-    // Navbar scroll
-    window.addEventListener('scroll', () => {
-        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        picker.style.animation = 'pickerLeave 0.45s cubic-bezier(0.76,0,0.24,1) forwards';
+
+        setTimeout(() => {
+            overlay.style.animation = 'overlayLeave 0.6s cubic-bezier(0.76,0,0.24,1) forwards';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                initPageAnimations();
+            }, 650);
+        }, 300);
+    }
+
+    function toggleLang() {
+        const next = currentLang === 'az' ? 'en' : 'az';
+        applyLang(next);
+        const btn = document.getElementById('langToggle');
+        btn.classList.add('switching');
+        setTimeout(() => btn.classList.remove('switching'), 350);
+    }
+
+    // ============================================================
+    //  OVERLAY SEQUENCE (İlk Açılış Məntiqi)
+    // ============================================================
+    window.addEventListener('DOMContentLoaded', () => {
+        const intro   = document.getElementById('overlayIntro');
+        const picker  = document.getElementById('langPicker');
+
+        if (currentLang) {
+            applyLang(currentLang);
+        } else {
+            applyLang('az');
+            localStorage.removeItem('portfolioLang');
+        }
+
+        picker.style.opacity = '0';
+        picker.style.transform = 'translateY(30px)';
+
+        setTimeout(() => {
+            intro.style.animation = 'introFade 0.4s ease forwards';
+            setTimeout(() => {
+                intro.style.display = 'none';
+                picker.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.22,1,0.36,1)';
+                picker.style.opacity = '1';
+                picker.style.transform = 'translateY(0)';
+            }, 400);
+        }, 1000);
     });
 
-    // Fade-up on scroll
-    const fadeEls = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-    fadeEls.forEach(el => observer.observe(el));
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const href = a.getAttribute('href');
-            if (href && href !== '#' && href.length > 1) {
-                const target = document.querySelector(href);
-                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-            }
+    // ============================================================
+    //  PAGE ANIMATIONS
+    // ============================================================
+    function initPageAnimations() {
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
         });
-    });
 
-    // Staggered timeline card entrance
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    const tlObserver = new IntersectionObserver((entries) => {
-        entries.forEach((e, i) => {
-            if (e.isIntersecting) {
-                e.target.style.transitionDelay = `${i * 0.12}s`;
-                e.target.style.opacity = '1';
-                e.target.style.transform = 'translateY(0)';
-            }
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+        fadeEls.forEach(el => observer.observe(el));
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const href = a.getAttribute('href');
+                if (href && href !== '#' && href.length > 1) {
+                    const target = document.querySelector(href);
+                    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                }
+            });
         });
-    }, { threshold: 0.15 });
-    timelineItems.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1)';
-        tlObserver.observe(el);
-    });
 
-    // Project card stagger
-    const projectCards = document.querySelectorAll('.project-card');
-    const pcObserver = new IntersectionObserver((entries) => {
-        entries.forEach((e, i) => {
-            if (e.isIntersecting) {
-                setTimeout(() => {
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const tlObserver = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    e.target.style.transitionDelay = `${i * 0.12}s`;
                     e.target.style.opacity = '1';
-                    e.target.style.transform = 'translateY(0) scale(1)';
-                }, i * 100);
-            }
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.15 });
+        timelineItems.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1)';
+            tlObserver.observe(el);
         });
-    }, { threshold: 0.1 });
-    projectCards.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(24px) scale(0.97)';
-        el.style.transition = 'opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1)';
-        pcObserver.observe(el);
-    });
+
+        const projectCards = document.querySelectorAll('.project-card');
+        const pcObserver = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => {
+                        e.target.style.opacity = '1';
+                        e.target.style.transform = 'translateY(0) scale(1)';
+                    }, i * 100);
+                }
+            });
+        }, { threshold: 0.1 });
+        projectCards.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px) scale(0.97)';
+            el.style.transition = 'opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1)';
+            pcObserver.observe(el);
+        });
+    }
 </script>
 </body>
 </html>
